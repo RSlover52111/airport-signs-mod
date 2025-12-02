@@ -1,6 +1,10 @@
 package com.rslover521.airportassetsmod;
 
 import com.mojang.logging.LogUtils;
+import com.rslover521.airportassetsmod.registry.ModBlockEntities;
+import com.rslover521.airportassetsmod.registry.ModBlocks;
+import com.rslover521.airportassetsmod.registry.ModCreativeTabs;
+import com.rslover521.airportassetsmod.registry.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -17,6 +21,14 @@ public class AirportAssetsMod {
 
     public AirportAssetsMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModBlocks.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+
+        ModCreativeTabs.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
