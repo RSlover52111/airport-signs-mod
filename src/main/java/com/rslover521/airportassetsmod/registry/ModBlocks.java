@@ -14,7 +14,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, AirportAssetsMod.MODID);
 
-    public static final RegistryObject<Block> RUNWAY_SIGN = BLOCKS.register("runway_sign", () -> new RunwaySignBlock(BlockBehaviour.Properties.of().strength(1.0F).noOcclusion().mapColor(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> RUNWAY_SIGN = BLOCKS.register("runway_sign", () -> new RunwaySignBlock(BlockBehaviour.Properties.of().strength(1.0F).noOcclusion().mapColor(MapColor.COLOR_BLACK)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
