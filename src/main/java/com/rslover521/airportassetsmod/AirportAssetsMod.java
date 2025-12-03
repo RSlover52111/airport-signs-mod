@@ -1,6 +1,5 @@
 package com.rslover521.airportassetsmod;
 
-import com.mojang.blaze3d.platform.ScreenManager;
 import com.mojang.logging.LogUtils;
 import com.rslover521.airportassetsmod.client.renderer.RunwaySignRenderer;
 import com.rslover521.airportassetsmod.network.NetworkHandler;
@@ -48,6 +47,7 @@ public class AirportAssetsMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        
+        LOGGER.info("Airport Assets Mod Loaded");
+        LOGGER.info("Hello Forge World");
     }
 }
