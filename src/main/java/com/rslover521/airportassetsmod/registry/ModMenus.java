@@ -15,7 +15,7 @@ public class ModMenus {
 
     public static final RegistryObject<MenuType<RunwaySignMenu>> RUNWAY_SIGN =
             MENUS.register("runway_sign", () -> new MenuType<RunwaySignMenu>(
-                    (windowId, inv) -> new RunwaySignMenu(windowId, inv),
+                    RunwaySignMenu::new,
                     FeatureFlags.DEFAULT_FLAGS
             ));
 
