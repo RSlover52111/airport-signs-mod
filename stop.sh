@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# stop.sh stops for any leftover xpra / sunshine sessions.
+
 echo "Stopping Xpra sessions..."
 XPRA_SESSIONS=$(xpra list 2>/dev/null | awk -F: '/:[0-9]+/ {print $2}')
 

@@ -1,9 +1,9 @@
 # PLEASE READ THIS BEFORE YOU DO ANYTHING:
 # --------------------------------------------------------------------------------------------
 # To run this script, type the following code in the terminal:
-# chmod +x start-xpra-mc.sh
-# ./start-xpra-mc.sh
-# Please email xwu053447@hsstu.lpsb.org or wulance58@gmail.com for any errors encountered 
+# chmod +x start.sh
+# ./start.sh
+# Please email wulance58@gmail.com for any errors encountered 
 # during the build or create an issue directly on github. Link to the issue page: 
 # https://github.com/RSlover52111/ForgeProject/issues
 # --------------------------------------------------------------------------------------------
