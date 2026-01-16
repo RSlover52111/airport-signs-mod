@@ -1,7 +1,6 @@
 package com.rslover521.airportassetsmod.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.rslover521.airportassetsmod.blockentity.RunwaySignBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;

@@ -7,9 +7,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.network.IContainerFactory;
 
 public class RunwaySignMenu extends AbstractContainerMenu {
     private final RunwaySignBlockEntity blockEntity;
@@ -36,7 +34,13 @@ public class RunwaySignMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public boolean stillValid(Player p_38874_) {
-        return false;
+    public boolean stillValid(Player player) {
+        return blockEntity != null
+            && player.distanceToSqr(
+                blockEntity.getBlockPos().getX() + 0.5,
+                blockEntity.getBlockPos().getY() + 0.5,
+                blockEntity.getBlockPos().getZ() + 0.5
+            ) <= 64;
     }
+
 }

@@ -13,8 +13,8 @@ public class ModBlockEntities {
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, AirportAssetsMod.MODID);
 
     public static final RegistryObject<BlockEntityType<RunwaySignBlockEntity>> RUNWAY_SIGN =
-            BLOCK_ENTITIES.register("runway_sign", () ->
-                    BlockEntityType.Builder.of(RunwaySignBlockEntity::new, ModBlocks.RUNWAY_SIGN.get()).build(null));
+        BLOCK_ENTITIES.register("runway_sign", () ->
+                BlockEntityType.Builder.of(RunwaySignBlockEntity::new, ModBlocks.RUNWAY_SIGN.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
