@@ -7,48 +7,36 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.regex.Pattern;
+import net.minecraftforge.network.IContainerFactory;
 
 public class RunwaySignMenu extends AbstractContainerMenu {
+    private final RunwaySignBlockEntity blockEntity;
 
-    private static final Pattern VALID =
-            Pattern.compile("^(0[1-9]|[1-3][0-9])(L|R|C)?$");
-
-    private final BlockPos pos;
-
-    public RunwaySignMenu(int id, Inventory inv, BlockPos pos) {
+    public RunwaySignMenu(int id, Inventory inv, RunwaySignBlockEntity be) {
         super(ModMenus.RUNWAY_SIGN.get(), id);
-        this.pos = pos;
+        this.blockEntity = be;
     }
 
+    // Factory method for network
     public static RunwaySignMenu fromNetwork(int id, Inventory inv, FriendlyByteBuf buf) {
-        return new RunwaySignMenu(id, inv, buf.readBlockPos());
+        BlockPos pos = buf.readBlockPos();
+        RunwaySignBlockEntity be = (RunwaySignBlockEntity) inv.player.level().getBlockEntity(pos);
+        return new RunwaySignMenu(id, inv, be);
     }
 
-    public BlockPos getPos() {
-        return pos;
-    }
-
-    public void setRunway(Player player, String text) {
-        if (player.level().isClientSide) return;
-        if (!VALID.matcher(text).matches()) return;
-
-        if (player.level().getBlockEntity(pos) instanceof RunwaySignBlockEntity sign) {
-            sign.setRunway(text);
-        }
-    }
-
-    /* ---------------- REQUIRED OVERRIDES ---------------- */
-
-    @Override
-    public boolean stillValid(Player player) {
-        return true;
+    public RunwaySignBlockEntity getBlockEntity() {
+        return blockEntity;
     }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int index) {
-        return ItemStack.EMPTY;
+    public ItemStack quickMoveStack(Player p_38941_, int p_38942_) {
+        return null;
+    }
+
+    @Override
+    public boolean stillValid(Player p_38874_) {
+        return false;
     }
 }
