@@ -1,4 +1,4 @@
 Todo:
     - fix the goddamn runway signs (could be renderer issue, network update issue, etc.)
-    - fix textures and block models for both ILS and runway signs
+    - fix textures and block models for both ILS and runway signs (done, haven't tested yet)
     - IDK release when...
